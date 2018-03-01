@@ -6,6 +6,14 @@ import { Component } from '@angular/core';
     selector: 'app-server',
     templateUrl: './server.component.html'
 })
-export class ServerComponent{
+export class ServerComponent {
     public title = 'My Server Component';
+
+    public changeTitle() {
+        this.title = 'Title has been changed';
+    }
+
+    public getTitle(): string {
+        return this.title;
+    }
 }
