@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
+  private isEnabled:boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+    setTimeout( () => this.isEnabled = true, 2000);
   }
 
 }
