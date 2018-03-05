@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  private isEnabled:boolean = false;
+  private isEnabled: boolean = false;
+  private username: string = '';
 
   constructor() { }
 
@@ -15,4 +16,22 @@ export class ServersComponent implements OnInit {
     setTimeout( () => this.isEnabled = true, 2000);
   }
 
+  onButtonClicked(event: Event) {
+    console.log(event.target);
+  }
+
+  valueChanged(event: Event) {
+    if ( (<HTMLInputElement>event.target).value.length !== 0 ) {
+      this.isEnabled=true;
+    }
+    else
+    {
+      this.isEnabled=false;
+    }
+  }
+  
+  buttonClicked(){
+    this.username='';
+    console.log("button clicked");
+  }
 }
