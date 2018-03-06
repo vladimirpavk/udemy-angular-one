@@ -6,9 +6,17 @@
 <app-server></app-server>
 <app-server></app-server> -->
 
-<input type="text" class="form-control" [(ngModel)]="username"  
+<!-- <input type="text" class="form-control" [(ngModel)]="username"  
     (input)="valueChanged($event)"/>
 
 {{username}}
 
-<button (click)="buttonClicked()" [disabled]="!isEnabled">Clear username</button>
+<button (click)="buttonClicked()" [disabled]="!isEnabled">Clear username</button> -->
+
+<button (click)="toggleVisible()">Toggle visible parameter</button>
+<p *ngIf="isVisible">Protected paragraf</p>
+
+<div *ngFor="let model of models"
+    [ngStyle]="{ backgroundColor: intervals > 5 ? 'blue' : 'white' }"
+    [ngClass]="setKlasa()">{{model.id}} - {{model.date}}
+</div>
