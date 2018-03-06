@@ -52,9 +52,9 @@ export class ServersComponent implements OnInit {
   constructor() { }
   
   public isVisible:boolean = false;
-  public models: Array<Model> = [];
+  //public models: Array<Model> = [];
+  public models: Model[] = [];
   public intervals: number=0;
-  public isBGBlue = false;
 
   ngOnInit() {
 
@@ -62,20 +62,18 @@ export class ServersComponent implements OnInit {
 
   toggleVisible(){
     this.isVisible=!this.isVisible;
-    //if(this.intervals > 5) this.isBGBlue=true;
     this.models.push(new Model(this.intervals++));
-    //console.log(this.models);
   }
 
-  setStyle(){
+  setStyle(index:number){
     return{
-      'background-color': this.intervals > 5 ? 'blue' : 'white'
+      'background-color': index > 5 ? 'blue' : 'white'
     }
   }
 
-  setKlasa(){
+  setKlasa(index:number){
     return{
-      'klasa1' : this.isBGBlue
+      'klasa1' : index > 5
     }
   }
 }

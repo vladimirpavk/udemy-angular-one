@@ -16,7 +16,12 @@
 <button (click)="toggleVisible()">Toggle visible parameter</button>
 <p *ngIf="isVisible">Protected paragraf</p>
 
-<div *ngFor="let model of models"
-    [ngStyle]="{ backgroundColor: intervals > 5 ? 'blue' : 'white' }"
-    [ngClass]="setKlasa()">{{model.id}} - {{model.date}}
+<!--<div *ngFor="let model of models; let i = index"
+    [ngStyle]="setStyle()"
+    [ngClass]="setKlasa()">{{model.id}} - {{model.date}} - index:{{i}}
+</div>-->
+
+<div *ngFor="let model of models; let i = index"
+    [ngStyle]="setStyle(i)"
+    [ngClass]="setKlasa(i)">{{model.id}} - {{model.date}} - index:{{i}}
 </div>
